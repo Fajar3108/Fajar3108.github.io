@@ -7,7 +7,7 @@ export default function Header() {
                 <h1 className="text-4xl md:text-5xl font-extrabold text-blue-600">Maulana Fajar Ibrahim</h1>
                 <p className="text-xl mt-2">Fullstack Web Developer | Next/React, Laravel, Go</p>
                 <p className="leading-relaxed text-gray-500 mt-3">
-                    As a highly accomplished Full-Stack Web Developer, I have over three years of experience with key technologies including PHP Laravel, Go, React.js, and Next.js. My passion for development led me to become a national LKS competition winner and earn the 'Best Mentor' award from Ruang Guru in 2023. Currently, I lead the Full-Stack delivery team at PT Hanatekindo, where I leverage my strong development and leadership skills to drive project success.
+                    As a highly accomplished Full-Stack Web Developer, I have over three years of experience with key technologies including PHP Laravel, Go, React.js, and Next.js. My passion for development led me to become a national LKS competition winner and earn the Best Mentor award from Ruang Guru in 2023. Currently, I lead the Full-Stack delivery team at PT Hanatekindo, where I leverage my strong development and leadership skills to drive project success.
                 </p>
                 <ul className="text-gray-600 flex mt-4 gap-2">
                     {
