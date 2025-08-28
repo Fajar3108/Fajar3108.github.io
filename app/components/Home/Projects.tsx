@@ -28,7 +28,7 @@ const projects = [
         imageUrl: PianoTilesImage,
     },
     {
-        title: "Cirendeu (Vilalge) Admin Panel",
+        title: "Cirendeu (Village) Admin Panel",
         tags: ["Laravel", "Bootstrap"],
         liveUrl: "",
         githubUrl: "https://github.com/fajar3108/desa-sii",
@@ -40,7 +40,7 @@ export default function Projects() {
     return (
         <div className="max-w-6xl mx-auto mt-8" id="projects">
             <h2 className="font-bold mb-4 text-xl">Projects</h2>
-            <div className="grid grid-cols-2 gap-10">
+            <div className="grid md:grid-cols-2 gap-10">
                 {projects.map((project, i) => (
                     <div key={`project-${i}`} className='grid gap-3'>
                         <Image src={project.imageUrl} alt='Project Tile' width={1000} height={1000} className='w-full rounded-xl' />

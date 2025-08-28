@@ -9,7 +9,7 @@ export default function Header() {
                 <p className="leading-relaxed text-gray-500 mt-3">
                     As a highly accomplished Full-Stack Web Developer, I have over three years of experience with key technologies including PHP Laravel, Go, React.js, and Next.js. My passion for development led me to become a national LKS competition winner and earn the Best Mentor award from Ruang Guru in 2023. Currently, I lead the Full-Stack delivery team at PT Hanatekindo, where I leverage my strong development and leadership skills to drive project success.
                 </p>
-                <ul className="text-gray-600 flex mt-4 gap-2">
+                <ul className="text-gray-600 flex mt-4 gap-2 justify-center md:justify-start">
                     {
                         SocialMedias.map((item: SocialMediaType, i: number) => (
                             <a href={item.link} target="_blank" key={`social-media-${i}-${item.name}}`} >
