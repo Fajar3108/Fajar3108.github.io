@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${poppins.className} antialiased px-4`}
       >
         <div className="max-w-4xl mx-auto">
           <Navbar />
