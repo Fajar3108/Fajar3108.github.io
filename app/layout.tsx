@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 
 const poppins = Poppins({ subsets: ["latin"], weight: "500" });
 
@@ -30,6 +32,7 @@ export default function RootLayout({
         <footer className="text-center py-10">
           Copyright {date.getFullYear()} &copy; <span className="text-blue-600">Maulana Fajar Ibrahim</span>
         </footer>
+        <GoogleAnalytics gaId="G-GE0W6JXP0N" />
       </body>
     </html>
   );
