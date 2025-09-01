@@ -45,8 +45,8 @@ function AchiementCard(props: AchievementType) {
                 <Award size={24} />
             </div>
             <div>
-                <h3 className="text-lg font-semibold text-gray-800">{props.title}</h3>
-                <p className="text-gray-600">{props.description}</p>
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{props.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{props.description}</p>
             </div>
         </div>
     )

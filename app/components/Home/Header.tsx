@@ -13,7 +13,7 @@ export default function Header() {
                     {
                         SocialMedias.map((item: SocialMediaType, i: number) => (
                             <a href={item.link} target="_blank" key={`social-media-${i}-${item.name}}`} >
-                                <li className="border border-gray-300 p-2 rounded text-sm hover:bg-gray-300 transition">
+                                <li className="border border-gray-300 p-2 rounded text-sm hover:bg-gray-300 transition dark:bg-white">
                                     {item.icon}
                                 </li>
                             </a>

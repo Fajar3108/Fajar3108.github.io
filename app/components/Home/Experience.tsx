@@ -22,8 +22,8 @@ function ExperienceCard(prop: ExperienceCardProps) {
     return (
         <div className="border rounded-xl border-gray-300 p-4 transition hover:bg-gray-100">
             <h3 className="text-xl font-semibold">{prop.experience.position} - {prop.experience.company}</h3>
-            <p className="text-sm text-gray-500">{prop.experience.startDate} - {prop.experience.endDate}</p>
-            <ul className="list-disc list-inside mt-2 text-gray-500">
+            <p className="text-sm text-gray-300">{prop.experience.startDate} - {prop.experience.endDate}</p>
+            <ul className="list-disc list-inside mt-2 text-gray-300">
                 {
                     prop.experience.description.map((item, j) => (
                         <li key={`experience-desc-${j}`}>{item}</li>
