@@ -11,7 +11,7 @@ const SocialMedias: Array<SocialMediaType> = [
     {
         name: "Github",
         link: "https://github.com/fajar3108",
-        icon: <Github size={18} />
+        icon: <Github size={18} className="dark:text-gray-300" />
     },
     {
         name: "LinkedIn",

@@ -1,76 +1,48 @@
-import { ExternalLink, Github } from 'lucide-react';
-import Image from 'next/image';
-import NadiImage from '@/app/images/projects/nadi.co.id.png';
-import SiraImage from '@/app/images/projects/siratour.id.png';
-import PianoTilesImage from '@/app/images/projects/piano-tiles.png';
-import CirendeuImage from '@/app/images/projects/cirendeu.png';
-
-const projects = [
-    {
-        title: "Nadi Company Profile",
-        tags: ["Laravel", "PHP", "Tailwind CSS"],
-        liveUrl: "https://nadi.co.id",
-        githubUrl: "",
-        imageUrl: NadiImage,
-    },
-    {
-        title: "Sira Tour",
-        tags: ["React", "Laravel", "Tailwind CSS"],
-        liveUrl: "https://siratour.id",
-        githubUrl: "",
-        imageUrl: SiraImage,
-    },
-    {
-        title: "JS Canvas Game: Piano Tiles",
-        tags: ["Vanilla Javascript"],
-        liveUrl: "https://pianotilesjscanvas.netlify.app/",
-        githubUrl: "https://github.com/Fajar3108/js-canvas-piano-tiles/",
-        imageUrl: PianoTilesImage,
-    },
-    {
-        title: "Cirendeu (Village) Admin Panel",
-        tags: ["Laravel", "Bootstrap"],
-        liveUrl: "",
-        githubUrl: "https://github.com/fajar3108/desa-sii",
-        imageUrl: CirendeuImage,
-    },
-];
+import Link from "next/link";
+import { ArrowRight, Github } from "lucide-react";
+import Image from "next/image";
+import ProjectsData, { ProjectType } from "@/app/data/projects";
 
 export default function Projects() {
     return (
-        <div className="max-w-6xl mx-auto mt-8" id="projects">
-            <h2 className="font-bold mb-4 text-xl">Projects</h2>
-            <div className="grid md:grid-cols-2 gap-10">
-                {projects.map((project, i) => (
-                    <div key={`project-${i}`} className='grid gap-3'>
-                        <Image src={project.imageUrl} alt='Project Tile' width={1000} height={1000} className='w-full rounded-xl' />
-                        <div>
-                            <h2 className='font-bold'>{project.title}</h2>
-                            <ul className='flex gap-2 mt-1 text-blue-600'>
-                                {project.tags.map((tag, j) => (
-                                    <li key={`project-tag-${j}`}>#{tag}</li>
-                                ))}
-                            </ul>
+        <section className="my-10">
+
+            <div className="grid gap-5">
+                {
+                    ProjectsData.map((project: ProjectType) => (
+                        <div key={project.id} className="grid md:grid-cols-2 gap-5 shadow-[0_0_20px_rgba(0,0,0,0.1)] p-8 md:py-14 rounded-2xl overflow-hidden dark:bg-gray-900">
+                            <div>
+                                <h3 className="font-semibold text-lg">{project.title}</h3>
+                                <p className="text-gray-600 dark:text-gray-300 mt-2 line-clamp-3">
+                                    {project.description}
+                                </p>
+                                <div className="mt-5 flex gap-2">
+                                    {
+                                        project.siteLink && (
+                                            <Link href={project.siteLink} className="px-5 border rounded-full flex gap-2 w-fit bg-black text-white transition" target="_blank">
+                                                Visit Site
+                                                <ArrowRight className="w-3" />
+                                            </Link>
+                                        )
+                                    }
+
+                                    {
+                                        project.githubLink && (
+                                            <Link href={project.githubLink} className="px-5 border rounded-full flex gap-2 w-fit hover:bg-black hover:text-white transition" target="_blank">
+                                                Github
+                                                <Github className="w-3" />
+                                            </Link>
+                                        )
+                                    }
+                                </div>
+                            </div>
+                            <div className="relative">
+                                <Image src={project.image} alt={project.title} className="md:absolute md:-bottom-20 md:-right-10 h-64 rounded-lg shadow-lg max-h-80 object-cover mt-4 md:mt-0" />
+                            </div>
                         </div>
-                        <div className='flex gap-2'>
-                            {
-                                project.githubUrl && (
-                                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="border p-2 rounded border-gray-300 text-gray-600 hover:bg-gray-100 transition-colors">
-                                        <Github size={18} />
-                                    </a>
-                                )
-                            }
-                            {
-                                project.liveUrl && (
-                                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="border p-2 rounded border-gray-300 text-gray-600 hover:bg-gray-100 transition-colors">
-                                        <ExternalLink size={18} />
-                                    </a>
-                                )
-                            }
-                        </div>
-                    </div>
-                ))}
+                    ))
+                }
             </div>
-        </div>
-    );
+        </section>
+    )
 }
